@@ -20,7 +20,7 @@ def letters_transform(user_input):
         return output
 
     else:
-        return f"я не знаю что делать."
+        return user_input
 
 
 # language = 'ru'
