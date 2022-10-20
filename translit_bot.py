@@ -1,8 +1,6 @@
-# https://habr.com/ru/post/442800/
-
 import telebot
 from input_testing import letters_transform
-bot = telebot.TeleBot('5704603308:AAHVM2f5_BGKg94-jbQbKxZX9rSVk2LeYyo')   # https://t.me/TranslitRUENbot
+bot = telebot.TeleBot('5704603308:AAHVM2f5_BGKg94-jbQbKxZX9rSVk2LeYyo')  # https://t.me/TranslitRUENbot
 
 
 @bot.message_handler(content_types=['text'])
