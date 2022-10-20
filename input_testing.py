@@ -19,9 +19,10 @@ def letters_transform(lang='ru', user_input=''):
                 output += letter
         return output
 
-    else: print(f"I don't know the language {lang}, try again")
+    else:
+        return f"I don't know the language {lang}, try again"
 
 
-language = 'ru'
-user_in = 'привет z ntcnjdsq cjj,otybt lkz <jnf ^))'
-print(letters_transform(user_input=user_in))
+# language = 'ru'
+# user_in = 'привет z ntcnjdsq cjj,otybt lkz <jnf ^))'
+# print(letters_transform(user_input=user_in))
