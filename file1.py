@@ -13,7 +13,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 if __name__ == '__main__':
-    application = ApplicationBuilder().token('TOKEN').build()
+    application = ApplicationBuilder().token('5736580585:AAHTmzjKZTfukU3eKt4FdQJEQs1zsKhB3aU-').build()
 
     start_handler = CommandHandler('start', start)
     application.add_handler(start_handler)
