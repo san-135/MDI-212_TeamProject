@@ -1,3 +1,5 @@
+# https://habr.com/ru/post/442800/
+
 import telebot
 bot = telebot.TeleBot('5736580585:AAHTmzjKZTfukU3eKt4FdQJEQs1zsKhB3aU-')
 
