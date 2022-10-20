@@ -1,9 +1,9 @@
 from dict import *
 
 
-def letters_transform(lang='ru', user_input=''):
+def letters_transform(user_input):
     output = ''
-    if lang == 'ru':
+    if user_input[0] in ENG_TO_RU_DICT:
         for letter in user_input:
             if letter in ENG_TO_RU_DICT:
                 output += ENG_TO_RU_DICT[letter]
@@ -11,7 +11,7 @@ def letters_transform(lang='ru', user_input=''):
                 output += letter
         return output
 
-    elif lang == 'en':
+    elif user_input[0] in RU_TO_ENG_DICT:
         for letter in user_input:
             if letter in RU_TO_ENG_DICT:
                 output += RU_TO_ENG_DICT[letter]
@@ -20,7 +20,7 @@ def letters_transform(lang='ru', user_input=''):
         return output
 
     else:
-        return f"I don't know the language {lang}, try again"
+        return f"я не знаю что делать."
 
 
 # language = 'ru'
