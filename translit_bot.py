@@ -1,13 +1,17 @@
-import telebot
+import telebot, logging
 from input_testing import letters_transform
 
 bot = telebot.TeleBot('5704603308:AAHVM2f5_BGKg94-jbQbKxZX9rSVk2LeYyo')  # https://t.me/TranslitRUENbot
 
 logging.basicConfig(filename='bot.log')
+
+
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     print(message.from_user.id)
     print(f'Message received from {message.from_user.id}: {message.text}')
+
+
 """
 Required python packages: telebot, pyTelegramBotAPI
 """
@@ -55,11 +59,13 @@ def command_handling(message):
         print(f'Answer to {message.from_user.id}: {letters_transform(user_input=message.text)}')
         return letters_transform(user_input=message.text)
 
+
 def lang_en(message):
     # reply with the changed text
     bot.send_message(message.from_user.id, letters_transform(user_input=message.text, lang='en'))
     # log the message to python console
     print(f"Answer to {message.from_user.id}: {letters_transform(user_input=message.text, lang='en')}")
+
 
 bot.polling(none_stop=True, interval=0)
 
