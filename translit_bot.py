@@ -1,5 +1,6 @@
 import telebot
 from input_testing import letters_transform
+
 bot = telebot.TeleBot('5704603308:AAHVM2f5_BGKg94-jbQbKxZX9rSVk2LeYyo')  # https://t.me/TranslitRUENbot
 
 """
@@ -7,7 +8,7 @@ Required python packages: telebot, pyTelegramBotAPI
 """
 
 
-@bot.message_handler(commands=['/start', '/help', '/ru', '/en'])
+@bot.message_handler(content_types=['text'])
 def command_handling(message):
     print(f'User {message.from_user.id}: {message.text}')
     if message.text == "/start":
@@ -36,6 +37,11 @@ def command_handling(message):
                                        callback=lang_en)
         print(f'Answer to {message.from_user.id}: Кидай текст в русской раскладке!')
 
+    elif message.text == '/halloween':
+        bot.send_message(message.from_user.id, '👻')
+        bot.send_message(message.from_user.id, 'Бугагашенька')
+        print(f'Answer to {message.from_user.id}: 👻 Бугагашенька')
+
     else:
         bot.send_message(message.from_user.id, 'Пожалуйста, выберите конечную раскладку:\n/ru Русская\n/en Английская')
         print(f'Answer to {message.from_user.id}: Пожалуйста, выберите конечную раскладку:\n'
@@ -56,7 +62,7 @@ def lang_en(message):
     print(f"Answer to {message.from_user.id}: {letters_transform(user_input=message.text, lang='en')}")
 
 
-bot.enable_save_next_step_handlers(delay=2)
+bot.enable_save_next_step_handlers(delay=1)
 bot.load_next_step_handlers()
 
-bot.infinity_polling()
+bot.polling(none_stop=True, interval=1)
