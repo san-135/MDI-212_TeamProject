@@ -11,8 +11,8 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, "Привет, я переделываю сообщения в другую раскладку. "
                                                "Напиши /help и я расскажу поподробнее")
         # log the message to python console
-        print(f'Answer to {message.from_user.id}: "Привет, я переделываю сообщения в другую раскладку. "'
-              f'"Напиши /help и я расскажу поподробнее"')
+        print(f'Answer to {message.from_user.id}: Привет, я переделываю сообщения в другую раскладку. '
+              f'Напиши /help и я расскажу поподробнее')
 
     elif message.text == "/help":
         # show bot description
